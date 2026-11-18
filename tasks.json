@@ -1,0 +1,55 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Frontend production build",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"--prefix",
+				"frontend",
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Django Module 1 checks",
+			"type": "shell",
+			"command": "backend\\venv\\Scripts\\python.exe",
+			"args": [
+				"backend\\manage.py",
+				"check"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Django migration consistency",
+			"type": "shell",
+			"command": "backend\\venv\\Scripts\\python.exe",
+			"args": [
+				"backend\\manage.py",
+				"makemigrations",
+				"--check",
+				"--dry-run"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Frontend production build via npm cmd",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"--prefix",
+				"frontend",
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+	]
+}
